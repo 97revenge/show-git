@@ -1,7 +1,9 @@
 import { GetServerSideProps } from "next";
+
 import React from "react";
 
 import Link from "next/link";
+import Page from "@/components/404";
 
 export default function User({ user, request }: { user: any; request: any }) {
   const { login, url, location } = user;
@@ -18,7 +20,9 @@ export default function User({ user, request }: { user: any; request: any }) {
           </Link>
         </>
       ) : (
-        <>voce está com o login errado</>
+        <>
+          <Page />
+        </>
       )}
     </>
   );
