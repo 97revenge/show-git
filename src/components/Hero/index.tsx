@@ -1,7 +1,7 @@
 "use client";
 
 import { GetServerSideProps } from "next";
-import Image from "next/image";
+import Wallet from "../wallet";
 
 export default function Hero({ children }: { children: React.ReactNode }) {
   return (
@@ -17,6 +17,7 @@ export default function Hero({ children }: { children: React.ReactNode }) {
               <p className="mt-3 text-gray-600 dark:text-gray-400 text-3xl pb-2">
                 App based on github API
               </p>
+              <div className=" w-full flex items-center justify-center p-4 mb-[27%]"></div>
               {children}
 
               <div className="hidden md:block absolute top-0 end-0 -translate-y-12 translate-x-20">
