@@ -44,13 +44,13 @@ export default function Wallet({
               >
                 <div
                   id="Divrelative3"
-                  className="shadow-[inset_0px_0px_0px_1px_rgba(255,_255,_255,_0.2)] bg-[#6b7280] flex flex-col justify-end pt-4 gap-5 w-full font-['Roboto_Flex'] items-start rounded-3xl"
+                  className="shadow-[inset_0px_0px_0px_1px_rgba(255,_255,_255,_0.2)] bg-[#858991] flex flex-col justify-end pt-4 gap-5 w-full font-['Roboto_Flex'] items-start rounded-3xl"
                 >
                   <div className="flex flex-col gap-3 w-full items-start">
                     <div className="flex flex-row gap-1 w-5/6 items-start mb-px ml-3">
                       <div
                         id="Divrelative"
-                        className="bg-white/87 flex flex-row w-6 items-start rounded-[24px] m-1 bg-white"
+                        className="bg-white/87 flex flex-row w-6 items-start rounded-[24px] m-1 bg-gray-500"
                       >
                         <Image
                           src={img}
@@ -141,11 +141,18 @@ export default function Wallet({
                   >
                     {qrcode}
                   </div>
-                  <img
-                    src="https://file.rendit.io/n/y9kpiAWZzmoXTEOsUdl0.png"
-                    alt="QpcanfntmA"
-                    id="QpcanfntmA"
-                  />
+                  <div className="w-full  h-20 relative bg-stone-300 bg-opacity-0 rounded-xl rounded-br-3xl flex-col justify-start items-start inline-flex rouded-b-3xl">
+                    <div className="w-full h-8 bg-white flex items-center justify-center ">
+                      <Image
+                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                        height={15}
+                        alt="github icon"
+                        width={20}
+                      />
+                    </div>
+
+                    <div className="w-[100%] h-[100%] relative bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 rounded-b-3xl"></div>
+                  </div>
                 </div>
               </div>
             </div>
