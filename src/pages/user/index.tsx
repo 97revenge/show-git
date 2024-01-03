@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 import Link from "next/link";
 
@@ -26,7 +26,6 @@ export default function User({
     <>
       {request == "200" ? (
         <>
-          <div className="border-2 border-gray-200 rounded-xl">ok</div>
           <div className="w-auto h-[650px] flex flex-col  items-center     p-8    border-b-2 ">
             <Wallet
               img={avatar_url}
@@ -60,7 +59,16 @@ export default function User({
                       <h3 className="group-hover:text-gray-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                         Repositories
                       </h3>
-                      <p className="text-sm text-gray-500">4 job positions</p>
+                      <p className="text-sm text-gray-500">
+                        <Link
+                          href={{
+                            pathname: "/repos",
+                            query: { username: login },
+                          }}
+                        >
+                          <u>{repo.length}</u> in public mode
+                        </Link>
+                      </p>
                     </div>
                     <div className="ps-3">
                       <svg
@@ -92,7 +100,16 @@ export default function User({
                       <h3 className="group-hover:text-gray-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                         Repositories Starred
                       </h3>
-                      <p className="text-sm text-gray-500">26 job positions</p>
+                      <p className="text-sm text-gray-500">
+                        <Link
+                          href={{
+                            pathname: "/repos",
+                            query: { username: login },
+                          }}
+                        >
+                          <u>{star.length}</u> liked
+                        </Link>
+                      </p>
                     </div>
                     <div className="ps-3">
                       <svg
@@ -177,82 +194,8 @@ export default function User({
                   </div>
                 </div>
               </a>
-
-              <div className="flex flex-row w-full gap-x-2">
-                <a
-                  className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="#"
-                >
-                  <div className="p-4 md:p-5">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <h3 className="group-hover:text-gray-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                          Followers
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          10 job positions
-                        </p>
-                      </div>
-                      <div className="ps-3">
-                        <svg
-                          className="flex-shrink-0 w-5 h-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="m9 18 6-6-6-6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="#"
-                >
-                  <div className="p-4 md:p-5">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <h3 className="group-hover:text-gray-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                          Following
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          14 job positions
-                        </p>
-                      </div>
-                      <div className="ps-3">
-                        <svg
-                          className="flex-shrink-0 w-5 h-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="m9 18 6-6-6-6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
-
-          <Link href={{ pathname: "/repos", query: { username: login } }}>
-            Repos
-          </Link>
         </>
       ) : (
         <>
