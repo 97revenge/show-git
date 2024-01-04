@@ -5,6 +5,8 @@ import Link from "next/link";
 import Page from "@/components/404";
 import Wallet from "@/components/wallet";
 import QRCode from "react-qr-code";
+import Image from "next/image";
+import Header from "@/components/header";
 
 export default function User({
   user,
@@ -17,14 +19,43 @@ export default function User({
   repo: Array<object>;
   star: Array<object>;
 }) {
-  const { login, url, location, name, id, followers, following, avatar_url } =
-    user;
+  const {
+    login,
+    url,
+    location,
+    name,
+    id,
+    followers,
+    following,
+    avatar_url,
+    hireable,
+  } = user;
 
   return (
     <>
       {request == "200" ? (
         <>
-          <div className="w-auto h-[650px] flex flex-col  items-center     p-8    border-b-2 ">
+          <Header>
+            <Image
+              src={avatar_url}
+              width={30}
+              height={30}
+              alt="profile icon"
+              className="rounded-full align-baseline mt-1"
+            />
+          </Header>
+          <div className="w-auto h-[650px] flex flex-col  items-center     p-8    border-b-2  bg-gradient-to-r from-gray-100 to-gray-300">
+            {hireable == true ? (
+              <span className="whitespace-nowrap rounded-full bg-lime-100 px-2.5 py-0.5 text-sm text-gray-700  mb-2 font-bold">
+                Hireable
+              </span>
+            ) : (
+              <>
+                <span className="whitespace-nowrap rounded-full bg-red-100 px-2.5 py-0.5 text-sm text-gray-700  mb-2 font-bold">
+                  Hired
+                </span>
+              </>
+            )}
             <Wallet
               img={avatar_url}
               username={String(`@${login}`)}
@@ -45,7 +76,7 @@ export default function User({
               }
             />
           </div>
-          <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-[#f9fafb]">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
               <div className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                 <div className="p-4 md:p-5">

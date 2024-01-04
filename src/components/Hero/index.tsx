@@ -1,12 +1,9 @@
-"use client";
-
 import { GetServerSideProps } from "next";
-import Wallet from "../wallet";
 
 export default function Hero({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-gradient-to-r from-gray-100 to-gray-300 h-screen">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
           <div className="text-center">
             <h1 className="text-6xl sm:text-[150px]  font-bold text-gray-800 dark:text-gray-200 py-12">
