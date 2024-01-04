@@ -17,7 +17,7 @@ export default function Repos({ repos }: { repos: any[] }) {
                   <div>{JSON.stringify(item.description)}</div>
                   <Link
                     href={{
-                      pathname: "/info",
+                      pathname: "/",
                       query: { repo: name },
                     }}
                   >

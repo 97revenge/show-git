@@ -208,8 +208,9 @@ export default function User({
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const instance = query?.username;
+
   const response = await fetch(`https://api.github.com/users/${instance}`);
-  const newData = response.status;
+  const status = response.status;
   const data = await response.json();
 
   const repo = await fetch(`https://api.github.com/users/${instance}/repos`);
@@ -221,7 +222,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   return {
     props: {
       user: data,
-      request: newData,
+      request: status,
       repo: repodata,
       star: starData,
     },
