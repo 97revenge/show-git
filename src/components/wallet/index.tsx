@@ -30,8 +30,8 @@ export default function Wallet({
 }: UserWallet) {
   return (
     <>
-      <div className="container noselect ">
-        <div className="canvas">
+      <div className="container noselect   ">
+        <div className="canvas w-full ">
           <Tracker />
           <div id="card">
             <div
@@ -86,7 +86,7 @@ export default function Wallet({
                         </div>
                       </div>
                     </div>{" "}
-                    <div className="flex flex-col px-6 font-sans items-start border-b-2 w-full border-gray-400 ">
+                    {/* <div className="flex flex-col px-6 font-sans items-start border-b-2 w-full border-gray-400 ">
                       <div className="flex flex-row justify-between w-full items-start">
                         <div className="text-xs font-extrabold text-white font-sans ">
                           Repositories
@@ -103,7 +103,7 @@ export default function Wallet({
                           {stars}
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="flex flex-col px-6 font-sans items-start border-b-2 w-full border-gray-400 ">
                       <div className="flex flex-row justify-between w-full items-start">
                         <div className="text-xs font-extrabold text-white font-sans ">
