@@ -1,4 +1,15 @@
-export default function Header({ children }: { children: React.ReactNode }) {
+import { z } from "zod";
+import { state } from "./state";
+
+type State = z.infer<typeof state>;
+
+export default function Header({
+  children,
+  state,
+}: {
+  children: React.ReactNode;
+  state: State;
+}) {
   return (
     <>
       <header className="bg-gray-50 border-[#e5e7eb] border-b-2">
@@ -6,12 +17,14 @@ export default function Header({ children }: { children: React.ReactNode }) {
           <div className="flex items-start justify-between gap-4">
             <div className="">
               <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                Welcome Back, Barry!
+                Bem Vindo, {state.name}!
               </h1>
 
               <p className="mt-1.5 text-sm text-gray-500">
-                Your website has seen a 52% increase in traffic in the last
-                month. Keep it up! 🚀
+                <a href={state.linker} className="hover:underline">
+                  clique aqui para ver sua conta
+                </a>
+                🚀
               </p>
             </div>
 
@@ -19,8 +32,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <label className="sr-only" htmlFor="search">
-                    {" "}
-                    Search{" "}
+                    Search
                   </label>
 
                   <input
