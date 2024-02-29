@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<h1>show-git</h1>
+  <h3> Crie uma wallet com seu perfil no Git Hub 🦑</h3>
+<img src="https://github.com/97revenge/show-git/assets/80254945/202fda3a-e4f7-4c44-b96d-919e65903059"/>
+</div>
 
 ## Getting Started
 
