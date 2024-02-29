@@ -31,8 +31,6 @@ export default function User({
   repo: Array<object>;
   star: Array<object>;
 }) {
-  "use client";
-
   const {
     login,
     url,
@@ -45,7 +43,7 @@ export default function User({
     hireable,
   } = user;
 
-  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const { targetRef } = usePDF({ filename: "page.pdf" });
 
   return (
     <>

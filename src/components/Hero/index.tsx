@@ -6,13 +6,13 @@ export default function Hero({ children }: { children: React.ReactNode }) {
       <div className="relative overflow-hidden bg-gradient-to-r from-gray-100 to-gray-300 h-screen">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
           <div className="text-center">
-            <h1 className="text-6xl sm:text-[150px]  font-bold text-gray-800 dark:text-gray-200 py-12">
+            <h1 className="text-6xl sm:text-[150px]  font-bold bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 bg-clip-text  py-12">
               Mostre seu Git
             </h1>
 
             <div className="  mx-auto max-w-xl relative">
-              <p className="mt-3 text-gray-600 dark:text-gray-400 text-3xl pb-2">
-                App based on github API
+              <p className="mt-3 text-gray-600  text-3xl pb-2">
+                Aplicativo baseado na API git hub
               </p>
               <div className=" w-full flex items-center justify-center p-4 mb-[27%]"></div>
               {children}
