@@ -12,7 +12,7 @@ export default function Hero({ children }: { children: React.ReactNode }) {
 
             <div className="  mx-auto max-w-xl relative">
               <p className="mt-3 text-gray-600  text-3xl pb-2">
-                Aplicativo baseado na API git hub
+                Aplicativo baseado na API do Git Hub
               </p>
               <div className=" w-full flex items-center justify-center p-4 mb-[27%]"></div>
               {children}
